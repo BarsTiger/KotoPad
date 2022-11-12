@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="img">
+    <file>img/kotopad.ico</file>
+    <file>img/download.png</file>
+    <file>img/stream.png</file>
+    <file>img/collab.png</file>
+    <file>img/collections.png</file>
+    <file>img/explorer.png</file>
+    <file>img/menu.png</file>
+    <file>img/pads.png</file>
+    <file>img/settings.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>815</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>KotoPad</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/img/img/kotopad.ico</normaloff>:/img/img/kotopad.ico</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QWidget {
+    background-color: rgb(30, 30, 30);
+    color: rgb(255, 255, 255);
+    font: 10pt &quot;Segoe UI&quot;;
+}
+QScrollBar:vertical,
+QScrollBar:horizontal {
+    border: none;
+    background: rgb(30, 30, 30);
+    width: 10px;
+    margin: 15px 0 15px 0;
+    border-radius: 0px;
+}
+QScrollBar::handle:vertical,
+QScrollBar::handle:horizontal {	
+    background-color: rgb(139, 139, 139);
+    min-height: 30px;
+    border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover,
+QScrollBar::handle:vertical:pressed,
+QScrollBar::handle:horizontal:hover,
+QScrollBar::handle:horizontal:pressed {	
+    background-color: rgb(149, 149, 149);
+}
+QScrollBar::sub-line:vertical,
+QScrollBar::add-line:vertical,
+QScrollBar::up-arrow:vertical,
+QScrollBar::down-arrow:vertical {
+    height: 0px;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, 
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal,
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+QPushButton {
+    color: white;
+    border-width: 1px;
+    border-radius:6px;
+    border-style: solid;
+    border-color: #303030;
+    background-color: #2c2d2e;
+}
+QPushButton:hover {
+    border-width: 2px;
+    background-color: #323232;
+}
+QPushButton:pressed {
+    background-color: #262728;
+}
+QPushButton:disabled {
+    background-color: #434343;
+    border-color: #0000;
+}
+QLineEdit, QTextBrowser, QPlainTextEdit, QTextEdit {
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #303030;
+    background-color: #242424;
+    font: 10pt &quot;Segoe UI&quot;;
+}
+QListWidget {
+    border-width: 1px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #303030;
+    padding: 10px;
+    background-color: #242424;
+    font: 10pt &quot;Segoe UI&quot;;
+}
+QListWidget:item {
+    background-color: #242424;
+    selection-color: white;
+}
+QListWidget:item:hover {
+    background-color: #323232;
+}
+QListWidget:item:selected {
+    background-color: #777777;
+}
+QComboBox
+{
+    border-width: 1px;
+    border-radius:6px;
+    border-style: solid;
+    border-color: #303030;
+    background-color: #2c2d2e;
+    color: #ffffff;
+}
+QComboBox::disabled
+{
+    background-color: #434343;
+    color: #656565;
+    border-color: #434343;
+}
+QComboBox:hover
+{
+    background-color: #323232;
+}
+QComboBox:on
+{
+    background-color: #434343;
+}
+QComboBox QAbstractItemView
+{
+    background-color: #434343;
+    color: #ffffff;
+    selection-background-color: #777777;
+    selection-color: white;
+    outline: 0;
+}
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    border-radius: 6px; 
+}
+QTabBar::tab
+{
+    background-color: #2c2d2e;
+    color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-color: #303030;
+    padding: 5px;
+}
+QTabBar::tab:disabled
+{
+    background-color: #656565;
+    color: #656565;
+}
+QTabWidget::pane 
+{
+    background-color: #a0a0a0;
+    color: #ffffff;
+    border: 3px solid;
+    border-radius: 15px;
+    border-color: #1c1c1c;
+}
+QTabBar::tab:selected
+{
+    background-color: #262728;
+    color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-color: #303030;
+    padding: 5px;
+}
+QTabBar::tab:selected:disabled
+{
+    background-color: #404040;
+    color: #656565;
+}
+QTabBar::tab:!selected 
+{
+    background-color: #262626;
+}
+QTabBar::tab:!selected:hover 
+{
+    background-color: #323232;
+}
+QTabBar::tab:top:!selected 
+{
+    margin-top: 3px;
+}
+QTabBar::tab:bottom:!selected 
+{
+    margin-bottom: 3px;
+}
+QTabBar::tab:top, QTabBar::tab:bottom 
+{
+    min-width: 8ex;
+    margin-right: -1px;
+    padding: 5px 10px 5px 10px;
+}
+QTabBar::tab:top:selected 
+{
+    border-bottom-color: none;
+}
+QTabBar::tab:bottom:selected 
+{
+    border-top-color: none;
+}
+QTabBar::tab:top:last, QTabBar::tab:bottom:last,
+QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one 
+{
+    margin-right: 0;
+}
+QTabBar::tab:left:!selected 
+{
+    margin-right: 3px;
+}
+QTabBar::tab:right:!selected
+{
+    margin-left: 3px;
+}
+QTabBar::tab:left, QTabBar::tab:right 
+{
+    min-height: 8ex;
+    margin-bottom: -1px;
+    padding: 10px 5px 10px 5px;
+}
+QTabBar::tab:left:selected 
+{
+    border-left-color: none;
+}
+QTabBar::tab:right:selected 
+{
+    border-right-color: none;
+}
+QTabBar::tab:left:last, QTabBar::tab:right:last,
+QTabBar::tab:left:only-one, QTabBar::tab:right:only-one 
+{
+    margin-bottom: 0;
+}
+
+QSpinBox {
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #303030;
+    background-color: #242424;
+    font: 10pt &quot;Segoe UI&quot;;
+}
+QSpinBox::up-button {
+    border: none;
+    background: none;
+}
+QSpinBox::down-button {
+    border: none;
+    background: none;
+}
+
+QToolBox::tab {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: #303030;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="centralwidget_lay">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <item>
+     <widget class="QListWidget" name="menu">
+      <property name="minimumSize">
+       <size>
+        <width>64</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>64</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QListWidget {
+    border-width: 0px;
+    border-radius: 0px;
+    border: none;
+    padding: 0px;
+    background-color: #191919;
+    font: 10pt &quot;Segoe UI&quot;;
+}
+QListWidget:item {
+    padding-left: 12px;
+    height: 60px;
+    background-color: #191919;
+    selection-color: rgba(255, 255, 255);
+}
+QListWidget:item:hover {
+    background-color: #323232;
+}
+QListWidget:item:selected {
+    background-color: #262728;
+}
+</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>false</bool>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="tabKeyNavigation">
+       <bool>false</bool>
+      </property>
+      <property name="showDropIndicator" stdset="0">
+       <bool>false</bool>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideRight</enum>
+      </property>
+      <property name="resizeMode">
+       <enum>QListView::Fixed</enum>
+      </property>
+      <property name="currentRow">
+       <number>-1</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Close menu</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/menu.png</normaloff>:/img/img/menu.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pads</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/pads.png</normaloff>:/img/img/pads.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Explorer</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/explorer.png</normaloff>:/img/img/explorer.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Collections</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/collections.png</normaloff>:/img/img/collections.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Stream</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/stream.png</normaloff>:/img/img/stream.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Collab</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/collab.png</normaloff>:/img/img/collab.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Download</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/download.png</normaloff>:/img/img/download.png</iconset>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Settings</string>
+       </property>
+       <property name="icon">
+        <iconset resource="images.qrc">
+         <normaloff>:/img/img/settings.png</normaloff>:/img/img/settings.png</iconset>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="content">
+      <widget class="QWidget" name="pads_page">
+       <layout class="QVBoxLayout" name="pads_page_lay">
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="pads_content">
+          <property name="tabPosition">
+           <enum>QTabWidget::North</enum>
+          </property>
+          <property name="tabShape">
+           <enum>QTabWidget::Rounded</enum>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <property name="movable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="pads_collection_1_tab">
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <attribute name="title">
+            <string>Pads collection 1</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="pads_page_1_tab_lay">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QWidget" name="pads_collection_1_widget" native="true">
+              <layout class="QGridLayout" name="pads_collection_1_lay"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="pads_collection_2_tab">
+           <attribute name="title">
+            <string>Pads collection 2</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="pads_collection_2_tab_lay">
+            <item>
+             <widget class="QWidget" name="pads_collection_2_widget" native="true">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <layout class="QGridLayout" name="pads_collection_2_lay"/>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="edit_pads_tab">
+           <attribute name="title">
+            <string>Edit pads</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QLabel" name="edit_collections_label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Double click row to add path to file</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="edit_pads_collections_widget" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="edit_first_pads_collection_widget" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QVBoxLayout" name="edit_first_pads_collection_lay">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="edit_first_pads_collection_label">
+                    <property name="text">
+                     <string>Pads collection 1</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="edit_first_pads_collection_list">
+                    <property name="styleSheet">
+                     <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                    </property>
+                    <property name="dragEnabled">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="edit_second_pads_collection_widget" native="true">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <layout class="QVBoxLayout" name="edit_first_pads_collection_lay_2">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="edit_second_pads_collection_label">
+                    <property name="text">
+                     <string>Pads collection 2</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QListWidget" name="edit_second_pads_collection_list">
+                    <property name="styleSheet">
+                     <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                    </property>
+                    <property name="dragEnabled">
+                     <bool>true</bool>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="browser_page"/>
+      <widget class="QWidget" name="collections_page"/>
+      <widget class="QWidget" name="stream_page"/>
+      <widget class="QWidget" name="collab_page"/>
+      <widget class="QWidget" name="download_page"/>
+      <widget class="QWidget" name="settings_page"/>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
