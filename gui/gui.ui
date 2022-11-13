@@ -430,110 +430,61 @@ QListWidget:item:selected {
      </widget>
     </item>
     <item>
-     <widget class="QStackedWidget" name="content">
-      <widget class="QWidget" name="pads_page">
-       <layout class="QVBoxLayout" name="pads_page_lay">
-        <property name="leftMargin">
-         <number>0</number>
-        </property>
-        <property name="topMargin">
-         <number>0</number>
-        </property>
-        <property name="rightMargin">
-         <number>0</number>
-        </property>
-        <property name="bottomMargin">
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QTabWidget" name="pads_content">
-          <property name="tabPosition">
-           <enum>QTabWidget::North</enum>
-          </property>
-          <property name="tabShape">
-           <enum>QTabWidget::Rounded</enum>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <property name="movable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="pads_collection_1_tab">
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>16777215</height>
-            </size>
+     <widget class="QWidget" name="main_content_to_player_box" native="true">
+      <layout class="QVBoxLayout" name="main_content_to_player_box_lay">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QStackedWidget" name="content">
+         <widget class="QWidget" name="pads_page">
+          <layout class="QVBoxLayout" name="pads_page_lay">
+           <property name="leftMargin">
+            <number>0</number>
            </property>
-           <attribute name="title">
-            <string>Pads collection 1</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="pads_page_1_tab_lay">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QWidget" name="pads_collection_1_widget" native="true">
-              <layout class="QGridLayout" name="pads_collection_1_lay"/>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="pads_collection_2_tab">
-           <attribute name="title">
-            <string>Pads collection 2</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="pads_collection_2_tab_lay">
-            <item>
-             <widget class="QWidget" name="pads_collection_2_widget" native="true">
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QTabWidget" name="pads_content">
+             <property name="tabPosition">
+              <enum>QTabWidget::North</enum>
+             </property>
+             <property name="tabShape">
+              <enum>QTabWidget::Rounded</enum>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="movable">
+              <bool>true</bool>
+             </property>
+             <widget class="QWidget" name="pads_collection_1_tab">
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
-              <layout class="QGridLayout" name="pads_collection_2_lay"/>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="edit_pads_tab">
-           <attribute name="title">
-            <string>Edit pads</string>
-           </attribute>
-           <layout class="QVBoxLayout" name="verticalLayout">
-            <item>
-             <widget class="QLabel" name="edit_collections_label">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string>Double click row to add path to file</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QWidget" name="edit_pads_collections_widget" native="true">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout">
+              <attribute name="title">
+               <string>Pads collection 1</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="pads_page_1_tab_lay">
                <property name="leftMargin">
                 <number>0</number>
                </property>
@@ -547,58 +498,69 @@ QListWidget:item:selected {
                 <number>0</number>
                </property>
                <item>
-                <widget class="QWidget" name="edit_first_pads_collection_widget" native="true">
+                <widget class="QWidget" name="pads_collection_1_widget" native="true">
+                 <layout class="QGridLayout" name="pads_collection_1_lay"/>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="pads_collection_2_tab">
+              <attribute name="title">
+               <string>Pads collection 2</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="pads_collection_2_tab_lay">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="pads_collection_2_widget" native="true">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <layout class="QGridLayout" name="pads_collection_2_lay"/>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="edit_pads_tab">
+              <attribute name="title">
+               <string>Edit pads</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="edit_pads_tab_lay">
+               <item>
+                <widget class="QLabel" name="edit_collections_label">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <layout class="QVBoxLayout" name="edit_first_pads_collection_lay">
-                  <property name="leftMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="topMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>0</number>
-                  </property>
-                  <property name="bottomMargin">
-                   <number>0</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="edit_first_pads_collection_label">
-                    <property name="text">
-                     <string>Pads collection 1</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QListWidget" name="edit_first_pads_collection_list">
-                    <property name="styleSheet">
-                     <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
-                    </property>
-                    <property name="editTriggers">
-                     <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
-                    </property>
-                    <property name="dragEnabled">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
+                 <property name="text">
+                  <string>Double click row to add path to file</string>
+                 </property>
                 </widget>
                </item>
                <item>
-                <widget class="QWidget" name="edit_second_pads_collection_widget" native="true">
+                <widget class="QWidget" name="edit_pads_collections_widget" native="true">
                  <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                    <horstretch>0</horstretch>
                    <verstretch>0</verstretch>
                   </sizepolicy>
                  </property>
-                 <layout class="QVBoxLayout" name="edit_first_pads_collection_lay_2">
+                 <layout class="QHBoxLayout" name="edit_pads_collections_widget_lay">
                   <property name="leftMargin">
                    <number>0</number>
                   </property>
@@ -612,23 +574,91 @@ QListWidget:item:selected {
                    <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="edit_second_pads_collection_label">
-                    <property name="text">
-                     <string>Pads collection 2</string>
+                   <widget class="QWidget" name="edit_first_pads_collection_widget" native="true">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
                     </property>
+                    <layout class="QVBoxLayout" name="edit_first_pads_collection_lay">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="edit_first_pads_collection_label">
+                       <property name="text">
+                        <string>Pads collection 1</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QListWidget" name="edit_first_pads_collection_list">
+                       <property name="styleSheet">
+                        <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                       </property>
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                       </property>
+                       <property name="dragEnabled">
+                        <bool>false</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QListWidget" name="edit_second_pads_collection_list">
-                    <property name="styleSheet">
-                     <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                   <widget class="QWidget" name="edit_second_pads_collection_widget" native="true">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
                     </property>
-                    <property name="editTriggers">
-                     <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
-                    </property>
-                    <property name="dragEnabled">
-                     <bool>true</bool>
-                    </property>
+                    <layout class="QVBoxLayout" name="edit_second_pads_collection_lay">
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="edit_second_pads_collection_label">
+                       <property name="text">
+                        <string>Pads collection 2</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QListWidget" name="edit_second_pads_collection_list">
+                       <property name="styleSheet">
+                        <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                       </property>
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                       </property>
+                       <property name="dragEnabled">
+                        <bool>true</bool>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </widget>
                   </item>
                  </layout>
@@ -636,19 +666,19 @@ QListWidget:item:selected {
                </item>
               </layout>
              </widget>
-            </item>
-           </layout>
-          </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="browser_page"/>
-      <widget class="QWidget" name="collections_page"/>
-      <widget class="QWidget" name="stream_page"/>
-      <widget class="QWidget" name="collab_page"/>
-      <widget class="QWidget" name="download_page"/>
-      <widget class="QWidget" name="settings_page"/>
+         <widget class="QWidget" name="browser_page"/>
+         <widget class="QWidget" name="collections_page"/>
+         <widget class="QWidget" name="stream_page"/>
+         <widget class="QWidget" name="collab_page"/>
+         <widget class="QWidget" name="download_page"/>
+         <widget class="QWidget" name="settings_page"/>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>
