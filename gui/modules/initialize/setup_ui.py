@@ -3,8 +3,9 @@ from gui.modules.core.blur import GlobalBlur
 from gui.modules.initialize import styles
 from gui.modules.handlers import register
 from PyQt5.QtWidgets import QMainWindow
-from PyQt5 import QtWidgets
+from PyQt5 import QtCore
 from modules.config import Config
+from modules.player.player import Player
 
 
 def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
@@ -16,9 +17,15 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     """
     ui.content.setCurrentIndex(0)
 
+    ui.player_track_label.hide()
+
     MainWindow.setStyleSheet(styles.centralwidget())
     ui.menu.setStyleSheet(styles.menupage())
     if 'acrylic' in Config.get().theme:
         GlobalBlur(MainWindow.winId(), acrylic=True)
 
-    register.register_handlers(ui, MainWindow)
+    ui.timer = QtCore.QTimer(MainWindow)
+
+    p = Player()
+
+    register.register_handlers(ui, MainWindow, p)

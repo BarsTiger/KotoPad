@@ -287,6 +287,28 @@ QToolBox::tab {
     border-radius: 5px;
     border-color: rgba(48, 48, 48, 0);
 }
+
+QSlider::groove:horizontal {
+    border-radius: 1px;
+    height: 10px;
+    margin: 0px;
+    background-color: rgba(36, 36, 36, 0);
+}
+QSlider::groove:horizontal:hover {
+    background-color: rgba(48, 48, 48, 0);
+}
+QSlider::handle:horizontal {
+    background-color: white;
+    border: none;
+    width: 5px;
+    border-radius: 40px;
+}
+QSlider::handle:horizontal:hover {
+    background-color: rgba(191, 191, 191, 0);
+}
+QSlider::handle:horizontal:pressed {
+    background-color: rgba(191, 191, 191, 0);
+}
 """
 
 menupage_b = """
@@ -558,6 +580,28 @@ QToolBox::tab {
     border-width: 1px;
     border-radius: 5px;
     border-color: #303030;
+}
+
+QSlider::groove:horizontal {
+    border-radius: 1px;
+    height: 10px;
+    margin: 0px;
+    background-color: #242424;
+}
+QSlider::groove:horizontal:hover {
+    background-color: #303030;
+}
+QSlider::handle:horizontal {
+    background-color: white;
+    border: none;
+    width: 5px;
+    border-radius: 40px;
+}
+QSlider::handle:horizontal:hover {
+    background-color: #bfbfbf;
+}
+QSlider::handle:horizontal:pressed {
+    background-color: #bfbfbf;
 }
 """
 
