@@ -25,6 +25,7 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
         GlobalBlur(MainWindow.winId(), acrylic=True)
 
     ui.timer = QtCore.QTimer(MainWindow)
+    ui.timer.start(100)
 
     p = Player()
 
