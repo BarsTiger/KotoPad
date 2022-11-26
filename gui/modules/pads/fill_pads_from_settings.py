@@ -54,7 +54,7 @@ def fill_pads(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
         button.clicked.connect(
             (
                 lambda: (
-                    p.set_media(ui.first_pads_dict[MainWindow.sender().text()]),
+                    p.set_media(ui.second_pads_dict[MainWindow.sender().text()]),
                     p.play(ui)
                 ) if MainWindow.sender().text() != "File doesn't exist" else None
             )
