@@ -253,10 +253,6 @@ class Ui_MainWindow(object):
         self.player_slider_horizontal_lay.addWidget(self.volume_box)
         self.player_box_lay.addWidget(self.player_slider_horizontal_box)
         self.main_content_to_player_box_lay.addWidget(self.player_box)
-        self.player_track_label = QtWidgets.QLabel(self.main_content_to_player_box)
-        self.player_track_label.setText("")
-        self.player_track_label.setObjectName("player_track_label")
-        self.main_content_to_player_box_lay.addWidget(self.player_track_label)
         self.centralwidget_lay.addWidget(self.main_content_to_player_box)
         MainWindow.setCentralWidget(self.centralwidget)
 

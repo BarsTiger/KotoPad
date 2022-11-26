@@ -17,8 +17,6 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     """
     ui.content.setCurrentIndex(0)
 
-    ui.player_track_label.hide()
-
     MainWindow.setStyleSheet(styles.centralwidget())
     ui.menu.setStyleSheet(styles.menupage())
     if 'acrylic' in Config.get().theme:
