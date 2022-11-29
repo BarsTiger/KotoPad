@@ -68,3 +68,6 @@ class Player(object):
     def set_position(self, pos: float):
         self.mediaplayer_preview.set_position(pos)
         self.mediaplayer_out.set_position(pos)
+
+    def update_devices(self):
+        pass

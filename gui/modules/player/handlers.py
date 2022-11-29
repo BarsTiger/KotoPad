@@ -2,6 +2,7 @@ from gui.gui import Ui_MainWindow
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QMainWindow
 from modules.player.player import Player
+from modules.config import Config
 
 
 def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
@@ -19,7 +20,8 @@ def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
     pause_icon = QtGui.QIcon()
     pause_icon.addPixmap(QtGui.QPixmap(":/img/img/pause.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
 
-    ui.volume_box.valueChanged.connect(lambda: p.set_volume(ui.volume_box.value()))
+    ui.volume_box.valueChanged.connect(lambda: (p.set_volume(ui.volume_box.value()),
+                                                Config.update('volume', ui.volume_box.value())))
     ui.play_pause_button.clicked.connect(lambda: p.playpause(ui))
     ui.timer.timeout.connect(lambda: (ui.player_time_slider.setValue(p.get_position()),
                                       ui.play_pause_button.setIcon(play_icon) if not p.mediaplayer_out.is_playing()

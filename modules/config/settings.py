@@ -7,7 +7,8 @@ class Config:
     @staticmethod
     def default():
         return {
-            "theme": "Dark gray"
+            "theme": "Dark gray",
+            "volume": 100
         }
 
     @staticmethod

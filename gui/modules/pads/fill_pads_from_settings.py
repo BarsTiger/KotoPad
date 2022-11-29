@@ -24,13 +24,13 @@ def fill_pads(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
         button = QtWidgets.QPushButton()
         button.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding,
                                                    QtWidgets.QSizePolicy.Expanding))
-        button.setText(os.path.split(item)[-1][:24:] if os.path.exists(item) else "File doesn't exist")
+        button.setText(os.path.split(item)[-1][:24:])
         button.clicked.connect(
             (
                 lambda: (
                     p.set_media(ui.first_pads_dict[MainWindow.sender().text()]),
                     p.play(ui)
-                ) if MainWindow.sender().text() != "File doesn't exist" else None
+                )
             )
         )
         Pads.update("first_pads", ui.first_pads_dict)
@@ -50,13 +50,13 @@ def fill_pads(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
         button = QtWidgets.QPushButton()
         button.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding,
                                                    QtWidgets.QSizePolicy.Expanding))
-        button.setText(os.path.split(item)[-1][:24:] if os.path.exists(item) else "File doesn't exist")
+        button.setText(os.path.split(item)[-1][:24:])
         button.clicked.connect(
             (
                 lambda: (
                     p.set_media(ui.second_pads_dict[MainWindow.sender().text()]),
                     p.play(ui)
-                ) if MainWindow.sender().text() != "File doesn't exist" else None
+                )
             )
         )
         Pads.update("second_pads", ui.second_pads_dict)

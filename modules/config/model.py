@@ -6,3 +6,4 @@ from dataclasses_json import dataclass_json
 @dataclass(frozen=True)
 class ConfigModel:
     theme: str
+    volume: int

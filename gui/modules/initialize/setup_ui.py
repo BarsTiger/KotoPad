@@ -16,6 +16,7 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     :return:
     """
     ui.content.setCurrentIndex(0)
+    ui.volume_box.setValue(Config.get().volume)
 
     MainWindow.setStyleSheet(styles.centralwidget())
     ui.menu.setStyleSheet(styles.menupage())
