@@ -39,14 +39,9 @@ class Player(object):
         self.mediaplayer_out.audio_set_volume(volume)
 
     def play(self, ui: Ui_MainWindow):
-        from PyQt5 import QtGui
-        pause_icon = QtGui.QIcon()
-        pause_icon.addPixmap(QtGui.QPixmap(":/img/img/pause.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-
         self.mediaplayer_preview.play()
         self.mediaplayer_out.play()
         self.set_volume(ui.volume_box.value())
-        ui.play_pause_button.setIcon(pause_icon)
 
     def playpause(self, ui: Ui_MainWindow):
         from PyQt5 import QtGui
