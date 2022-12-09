@@ -27,5 +27,4 @@ def get_silenced_media(original: str) -> str | None:
 
     except Exception as e:
         print(e)
-        raise e
         return None
