@@ -4,4 +4,5 @@
 /dist/
 /tests/
 /data/
+/temp/
 *.spec

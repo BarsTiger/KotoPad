@@ -1,5 +1,7 @@
 import vlc
 from gui.gui import Ui_MainWindow
+from gui.modules.core import popup
+from modules.player.add_second import get_silenced_media
 
 
 def get_instance() -> vlc.Instance:
@@ -23,16 +25,22 @@ def get_devices(mediaplayer: vlc.MediaPlayer) -> dict:
 
 class Player(object):
     def __init__(self):
-        self.instance = get_instance()
-        self.mediaplayer_preview = get_player(self.instance)
+        self.instance_preview = get_instance()
+        self.instance_out = get_instance()
+        self.mediaplayer_preview = get_player(self.instance_preview)
         self.mediaplayer_preview.audio_output_device_set(None, get_devices(self.mediaplayer_preview)['Default'])
-        self.mediaplayer_out = get_player(self.instance)
+        self.mediaplayer_out = get_player(self.instance_out)
         self.mediaplayer_out.audio_output_device_set(None, get_devices(
             self.mediaplayer_out)['CABLE Input (VB-Audio Virtual Cable)'])
 
     def set_media(self, media: str) -> None:
-        self.mediaplayer_preview.set_media(self.instance.media_new(media))
-        self.mediaplayer_out.set_media(self.instance.media_new(media))
+        if get_silenced_media(media):
+            self.mediaplayer_preview.set_media(self.instance_preview.media_new(get_silenced_media(media)))
+            self.mediaplayer_out.set_media(self.instance_out.media_new(get_silenced_media(media)))
+        else:
+            popup.popup('Error', 'Error playing this media. \nIf it uses link, check is this link valid.')
+            self.mediaplayer_preview.set_media(None)
+            self.mediaplayer_out.set_media(None)
 
     def set_volume(self, volume: int):
         self.mediaplayer_preview.audio_set_volume(volume)

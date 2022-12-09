@@ -8,7 +8,12 @@ class Config:
     def default():
         return {
             "theme": "Dark gray",
-            "volume": 100
+            "volume": 100,
+            "out_device": str(),
+            "preview_device": str(),
+            "in_micro": str(),
+            "out_micro": str(),
+            "restream": False
         }
 
     @staticmethod

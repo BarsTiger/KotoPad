@@ -8,3 +8,6 @@ python-vlc
 sounddevice
 numpy
 validators
+pydub
+pafy
+youtube-dl==2020.12.2

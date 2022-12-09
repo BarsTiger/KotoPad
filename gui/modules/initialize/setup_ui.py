@@ -1,6 +1,7 @@
 from gui.gui import Ui_MainWindow
 from gui.modules.core.blur import GlobalBlur
 from gui.modules.initialize import styles
+from gui.modules.initialize import fill_settings
 from gui.modules.handlers import register
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtCore
@@ -16,7 +17,6 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     :return:
     """
     ui.content.setCurrentIndex(0)
-    ui.volume_box.setValue(Config.get().volume)
 
     MainWindow.setStyleSheet(styles.centralwidget())
     ui.menu.setStyleSheet(styles.menupage())
@@ -27,5 +27,7 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     ui.timer.start(100)
 
     p = Player()
+
+    fill_settings.fill_settings(ui)
 
     register.register_handlers(ui, MainWindow, p)
