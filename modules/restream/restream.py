@@ -19,3 +19,6 @@ class Restreamer(object):
                                         get_streaming_devices().output[ui.output_device_restream_box.currentText()]),
                                 callback=Restreamer.callback)
         self.stream.start()
+
+    def stop(self):
+        self.stream.stop()

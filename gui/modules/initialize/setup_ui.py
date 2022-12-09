@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QMainWindow
 from PyQt5 import QtCore
 from modules.config import Config
 from modules.player.player import Player
+from modules.restream.restream import Restreamer
 
 
 def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
@@ -27,7 +28,10 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     ui.timer.start(100)
 
     p = Player()
+    rs = Restreamer()
 
     fill_settings.fill_settings(ui)
 
-    register.register_handlers(ui, MainWindow, p)
+    (lambda: rs.restart(ui) if ui.restream_micro_checkbox.isChecked() else rs.stop())()
+
+    register.register_handlers(ui, MainWindow, p, rs)

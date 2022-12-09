@@ -4,18 +4,14 @@ from gui.modules import menu
 from gui.modules import pads
 from gui.modules import player
 from gui.modules import settings
+from gui.modules import restreammic
 from modules.player.player import Player
+from modules.restream.restream import Restreamer
 
 
-def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player):
-    """
-    Register all handlers
-    :param ui:
-    :param MainWindow:
-    :param p:
-    :return:
-    """
+def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player, rs: Restreamer):
     menu.register_handlers(ui)
     pads.register_handlers(ui, MainWindow, p)
     player.register_handlers(ui, MainWindow, p)
     settings.register_handlers(ui)
+    restreammic.register_handlers(ui, MainWindow, rs)
