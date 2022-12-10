@@ -927,6 +927,19 @@ QListWidget:item:selected {
                  </property>
                 </spacer>
                </item>
+               <item>
+                <widget class="QPushButton" name="clear_temp_button">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Clear KotoPad temporary files (use if sound doesn't play correctly)</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </widget>

@@ -1,5 +1,6 @@
 from gui.gui import Ui_MainWindow
 from modules.config import Config
+import shutil
 
 
 def register_handlers(ui: Ui_MainWindow):
@@ -18,4 +19,8 @@ def register_handlers(ui: Ui_MainWindow):
     )
     ui.input_device_restream_box.currentTextChanged.connect(
         lambda: Config.update("in_micro", ui.input_device_restream_box.currentText())
+    )
+
+    ui.clear_temp_button.clicked.connect(
+        lambda: shutil.rmtree('temp', ignore_errors=True)
     )

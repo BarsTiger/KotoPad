@@ -290,6 +290,10 @@ class Ui_MainWindow(object):
         self.general_settings_tab_lay.addWidget(self.theme_box)
         spacerItem1 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.general_settings_tab_lay.addItem(spacerItem1)
+        self.clear_temp_button = QtWidgets.QPushButton(self.general_settings_tab)
+        self.clear_temp_button.setMinimumSize(QtCore.QSize(0, 40))
+        self.clear_temp_button.setObjectName("clear_temp_button")
+        self.general_settings_tab_lay.addWidget(self.clear_temp_button)
         self.settings_tabs_widget.addTab(self.general_settings_tab, "")
         self.settings_page_lay.addWidget(self.settings_tabs_widget)
         self.content.addWidget(self.settings_page)
@@ -392,6 +396,7 @@ class Ui_MainWindow(object):
         self.theme_box.setItemText(0, _translate("MainWindow", "Dark gray"))
         self.theme_box.setItemText(1, _translate("MainWindow", "Black"))
         self.theme_box.setItemText(2, _translate("MainWindow", "Black acrylic"))
+        self.clear_temp_button.setText(_translate("MainWindow", "Clear KotoPad temporary files (use if sound doesn\'t play correctly)"))
         self.settings_tabs_widget.setTabText(self.settings_tabs_widget.indexOf(self.general_settings_tab), _translate("MainWindow", "General"))
 import gui.images_rc
 
