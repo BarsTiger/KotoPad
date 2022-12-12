@@ -3,10 +3,6 @@ from gui.gui import Ui_MainWindow
 
 
 def open_menu(ui: Ui_MainWindow) -> None:
-    """
-    Animates the menu to open and close, using animation from config
-    :return:
-    """
     width = ui.menu.geometry().width()
     Ui_MainWindow.animation = QtCore.QPropertyAnimation(ui.menu, b"minimumWidth")
     Ui_MainWindow.animation.setDuration(300)
@@ -22,12 +18,6 @@ def open_menu(ui: Ui_MainWindow) -> None:
 
 
 def handle_menu_click(text: str, ui: Ui_MainWindow) -> None:
-    """
-    Handles the click on the menu and changes the page
-    :param text:
-    :param ui:
-    :return:
-    """
     index = {
         "Close menu": [lambda _: open_menu(ui), None],
         "Pads": [ui.content.setCurrentWidget, ui.pads_page],

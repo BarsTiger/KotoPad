@@ -1,7 +1,7 @@
 import vlc
 from gui.gui import Ui_MainWindow
 from gui.modules.core import popup
-from modules.player.add_second import get_silenced_media
+from modules.player.convert import get_silenced_media
 
 
 def get_instance() -> vlc.Instance:
@@ -24,14 +24,16 @@ def get_devices(mediaplayer: vlc.MediaPlayer) -> dict:
 
 
 class Player(object):
-    def __init__(self):
+    def __init__(self, ui: Ui_MainWindow):
         self.instance_preview = get_instance()
         self.instance_out = get_instance()
         self.mediaplayer_preview = get_player(self.instance_preview)
-        self.mediaplayer_preview.audio_output_device_set(None, get_devices(self.mediaplayer_preview)['Default'])
+        self.mediaplayer_preview.audio_output_device_set(None, get_devices(self.mediaplayer_preview)[
+            ui.preview_device_play_box.currentText()
+        ])
         self.mediaplayer_out = get_player(self.instance_out)
         self.mediaplayer_out.audio_output_device_set(None, get_devices(
-            self.mediaplayer_out)['CABLE Input (VB-Audio Virtual Cable)'])
+            self.mediaplayer_out)[ui.output_device_play_box.currentText()])
 
     def set_media(self, media: str) -> None:
         if get_silenced_media(media):
@@ -77,5 +79,10 @@ class Player(object):
         self.mediaplayer_preview.set_position(pos)
         self.mediaplayer_out.set_position(pos)
 
-    def update_devices(self):
-        pass
+    def update_devices(self, ui: Ui_MainWindow):
+        self.mediaplayer_preview.audio_output_device_set(None, get_devices(self.mediaplayer_preview)[
+            ui.preview_device_play_box.currentText()
+        ])
+        self.mediaplayer_out.audio_output_device_set(None, get_devices(self.mediaplayer_out)[
+            ui.output_device_play_box.currentText()
+        ])
