@@ -13,7 +13,8 @@ class Config:
             "preview_device": str(),
             "in_micro": str(),
             "out_micro": str(),
-            "restream": False
+            "restream": False,
+            "direct_stream": True
         }
 
     @staticmethod

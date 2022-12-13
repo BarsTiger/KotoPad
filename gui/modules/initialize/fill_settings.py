@@ -40,3 +40,5 @@ def fill_settings(ui: Ui_MainWindow):
 
     ui.spotify_client_id_box.setText(SpotifyConfig.get().client_id)
     ui.spotify_client_secret_box.setText(SpotifyConfig.get().client_secret)
+
+    ui.use_original_streaming_method_check.setChecked(Config.get().direct_stream)

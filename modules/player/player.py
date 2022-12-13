@@ -1,7 +1,7 @@
 import vlc
 from gui.gui import Ui_MainWindow
 from gui.modules.core import popup
-from modules.player.convert import get_silenced_media
+from modules.player.convert import get_ready_media
 
 
 def get_instance() -> vlc.Instance:
@@ -36,9 +36,9 @@ class Player(object):
             self.mediaplayer_out)[ui.output_device_play_box.currentText()])
 
     def set_media(self, media: str) -> None:
-        if get_silenced_media(media):
-            self.mediaplayer_preview.set_media(self.instance_preview.media_new(get_silenced_media(media)))
-            self.mediaplayer_out.set_media(self.instance_out.media_new(get_silenced_media(media)))
+        if get_ready_media(media):
+            self.mediaplayer_preview.set_media(self.instance_preview.media_new(get_ready_media(media)))
+            self.mediaplayer_out.set_media(self.instance_out.media_new(get_ready_media(media)))
         else:
             popup.popup('Error', 'Error playing this media. \nIf it uses link, check is this link valid.')
             self.mediaplayer_preview.set_media(None)

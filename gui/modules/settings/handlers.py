@@ -30,6 +30,10 @@ def register_handlers(ui: Ui_MainWindow):
         lambda: SpotifyConfig.update("client_secret", ui.spotify_client_secret_box.text())
     )
 
+    ui.use_original_streaming_method_check.stateChanged.connect(
+        lambda: Config.update("direct_stream", ui.use_original_streaming_method_check.isChecked())
+    )
+
     ui.clear_temp_button.clicked.connect(
         lambda: shutil.rmtree('temp', ignore_errors=True)
     )

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>815</width>
-    <height>500</height>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -853,22 +853,44 @@ QListWidget:item:selected {
                <item>
                 <widget class="QCheckBox" name="use_original_streaming_method_check">
                  <property name="text">
-                  <string>Use direct stream method (cuts last second of audio, not recommended if playing short files)</string>
+                  <string>Use direct stream method</string>
                  </property>
                  <property name="checked">
                   <bool>true</bool>
                  </property>
                 </widget>
                </item>
+               <item alignment="Qt::AlignTop">
+                <widget class="QLabel" name="use_original_streaming_method_desc">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>33</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Direct stream loads faster and doesn't lags app on first sound load, it is more reliable method when playing from YouTube or Spotify. If you are trying to play short files and it cuts end of sound, uncheck this box.</string>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
                <item>
-                <spacer name="audio_devices_settings_tab_spacer">
+                <spacer name="verticalSpacer">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>40</height>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>

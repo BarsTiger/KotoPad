@@ -12,3 +12,4 @@ class ConfigModel:
     in_micro: str
     out_micro: str
     restream: bool
+    direct_stream: bool
