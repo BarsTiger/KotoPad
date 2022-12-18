@@ -30,3 +30,16 @@ Download and convert method can cause long first load time and app crashes when 
 |                        Can crash app                         |                              No                              | Yes, but better to wait couple of minutes when downloading song from Spotify or YouTube, after that app will unlagg |
 |                  Needs internet connection                   |            Every time you play the file from web             |    Only when you are playing file from web for first time    |
 |                        Recommended if                        | Streaming from link or YouTube/Spotify and you cannot wait for file to fully download. Also it is recommended for playing long files from your hard drive | Playing short files from hard drive or if first method doesn't work properly for YouTube link. Also you can use this if you can wait for song from Spotify to load for couple of minutes and save it in cache to play it instantly next time |
+
+## 🔨 Building custom release for Windows
+
+Use Python 3.10
+
+```
+git clone https://github.com/BarsTiger/KotoPad
+cd KotoPad
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+pyinstaller KotoPad.spec
+```
