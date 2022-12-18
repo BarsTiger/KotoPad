@@ -13,3 +13,10 @@ class ConfigModel:
     out_micro: str
     restream: bool
     direct_stream: bool
+
+
+@dataclass_json
+@dataclass(frozen=True)
+class PathsModel:
+    first_browser_path: str
+    second_browser_path: str

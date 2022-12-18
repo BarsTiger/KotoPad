@@ -20,21 +20,22 @@
   <property name="styleSheet">
    <string notr="true">
 QWidget {
-    background-color: rgb(30, 30, 30);
-    color: rgb(255, 255, 255);
+    background-color: #1e1e1e;
+    color: white;
     font: 10pt &quot;Segoe UI&quot;;
 }
+
 QScrollBar:vertical,
 QScrollBar:horizontal {
     border: none;
-    background: rgb(30, 30, 30);
+    background: #1e1e1e;
     width: 10px;
     margin: 15px 0 15px 0;
     border-radius: 0px;
 }
 QScrollBar::handle:vertical,
 QScrollBar::handle:horizontal {	
-    background-color: rgb(139, 139, 139);
+    background-color: #8b8b8b;
     min-height: 30px;
     border-radius: 5px;
 }
@@ -42,7 +43,7 @@ QScrollBar::handle:vertical:hover,
 QScrollBar::handle:vertical:pressed,
 QScrollBar::handle:horizontal:hover,
 QScrollBar::handle:horizontal:pressed {	
-    background-color: rgb(149, 149, 149);
+    background-color: #959595;
 }
 QScrollBar::sub-line:vertical,
 QScrollBar::add-line:vertical,
@@ -56,6 +57,7 @@ QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal,
 QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
     background: none;
 }
+
 QPushButton {
     color: white;
     border-width: 1px;
@@ -75,6 +77,7 @@ QPushButton:disabled {
     background-color: #434343;
     border-color: #0000;
 }
+
 QLineEdit, QTextBrowser, QPlainTextEdit, QTextEdit {
     border-width: 1px;
     border-radius: 5px;
@@ -83,7 +86,8 @@ QLineEdit, QTextBrowser, QPlainTextEdit, QTextEdit {
     background-color: #242424;
     font: 10pt &quot;Segoe UI&quot;;
 }
-QListWidget {
+
+QListWidget, QListView, QTreeView {
     border-width: 1px;
     border-radius: 15px;
     border-style: solid;
@@ -92,16 +96,25 @@ QListWidget {
     background-color: #242424;
     font: 10pt &quot;Segoe UI&quot;;
 }
-QListWidget:item {
+QListWidget:item, QListView:item, QTreeView:item {
     background-color: #242424;
     selection-color: white;
 }
-QListWidget:item:hover {
+QListWidget:item:hover, QListView:item:hover, QTreeView:item:hover {
     background-color: #323232;
 }
-QListWidget:item:selected {
+QListWidget:item:selected, QListView:item:selected, QTreeView:item:selected {
     background-color: #777777;
 }
+
+QTreeView::branch:has-children:closed {
+    image: url(&quot;:/img/img/down.svg&quot;);
+}
+
+QTreeView::branch:has-children:open {
+    image: url(&quot;:/img/img/up.svg&quot;);
+}
+
 QComboBox
 {
     border-width: 1px;
@@ -109,7 +122,7 @@ QComboBox
     border-style: solid;
     border-color: #303030;
     background-color: #2c2d2e;
-    color: #ffffff;
+    color: white;
 }
 QComboBox::disabled
 {
@@ -128,7 +141,7 @@ QComboBox:on
 QComboBox QAbstractItemView
 {
     background-color: #434343;
-    color: #ffffff;
+    color: white;
     selection-background-color: #777777;
     selection-color: white;
     outline: 0;
@@ -139,10 +152,11 @@ QComboBox::drop-down
     subcontrol-position: top right;
     border-radius: 6px; 
 }
+
 QTabBar::tab
 {
     background-color: #2c2d2e;
-    color: #ffffff;
+    color: white;
     border-style: solid;
     border-width: 1px;
     border-top-left-radius: 3px;
@@ -158,7 +172,7 @@ QTabBar::tab:disabled
 QTabWidget::pane 
 {
     background-color: #a0a0a0;
-    color: #ffffff;
+    color: white;
     border: 3px solid;
     border-radius: 15px;
     border-color: #1c1c1c;
@@ -166,7 +180,7 @@ QTabWidget::pane
 QTabBar::tab:selected
 {
     background-color: #262728;
-    color: #ffffff;
+    color: white;
     border-style: solid;
     border-width: 1px;
     border-top-left-radius: 3px;
@@ -692,7 +706,204 @@ QListWidget:item:selected {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="browser_page"/>
+         <widget class="QWidget" name="browser_page">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QTabWidget" name="browser_page_tabs">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="first_filebrowser_tab">
+              <attribute name="title">
+               <string>First browser</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="first_filebrowser_tab_lay">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTreeView" name="folders_browser_treeview_first"/>
+               </item>
+               <item>
+                <widget class="QListWidget" name="files_browser_listwidget_first"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="second_filebrowser_tab">
+              <attribute name="title">
+               <string>Second browser</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="second_filebrowser_tab_lay">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTreeView" name="folders_browser_treeview_second"/>
+               </item>
+               <item>
+                <widget class="QListWidget" name="files_browser_listwidget_second"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="browser_page_options_tab">
+              <attribute name="title">
+               <string>Options</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QLabel" name="first_browser_parent_dir_path_label">
+                 <property name="text">
+                  <string>First browser parent dir</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="first_browser_parent_dir_path_widget" native="true">
+                 <layout class="QHBoxLayout" name="first_browser_parent_dir_path_lay">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="first_browser_parent_dir_box">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="placeholderText">
+                     <string>D:\</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="first_browser_parent_dir_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Choose folder</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="second_browser_parent_dir_path_label">
+                 <property name="text">
+                  <string>Second browser parent dir</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="second_browser_parent_dir_path_widget" native="true">
+                 <layout class="QHBoxLayout" name="second_browser_parent_dir_path_lay">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="second_browser_parent_dir_box">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="placeholderText">
+                     <string>C:\</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="second_browser_parent_dir_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>30</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Choose folder</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <spacer name="browser_page_options_spacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="collections_page"/>
          <widget class="QWidget" name="stream_page"/>
          <widget class="QWidget" name="collab_page"/>

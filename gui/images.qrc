@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="img">
+    <file>img/down.svg</file>
+    <file>img/up.svg</file>
     <file>img/pause.png</file>
     <file>img/play.png</file>
     <file>img/kotopad.ico</file>
