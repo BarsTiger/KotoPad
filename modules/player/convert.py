@@ -23,6 +23,9 @@ def get_ready_media(original: str) -> str | None:
     if not os.path.isdir('temp'):
         os.mkdir('temp')
 
+    if Config.get().direct_stream:
+        return original
+
     try:
         namehash = 'temp\\' + hashlib.md5(original.encode('utf-8')).hexdigest()
         if os.path.isfile(namehash):
@@ -36,9 +39,6 @@ def get_ready_media(original: str) -> str | None:
                         original = 'tempsound'
                 else:
                     original = get_raw_link(original)
-
-        if Config.get().direct_stream:
-            return original
 
         (pydub.AudioSegment.from_file(original) + pydub.AudioSegment.silent(1500))\
             .export(namehash, format='mp3')
