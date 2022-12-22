@@ -998,7 +998,66 @@ QListWidget:item:selected {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="stream_page"/>
+         <widget class="QWidget" name="stream_page">
+          <layout class="QVBoxLayout" name="stream_page_lay">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QWidget" name="stream_page_box_bt_widget" native="true">
+             <layout class="QHBoxLayout" name="stream_page_box_bt_lay">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="to_stream_url_box">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="placeholderText">
+                 <string>URL (direct web file, YouTube or spotify link) or path to file</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="play_stream_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>70</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Play</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="stream_logs_box"/>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="collab_page"/>
          <widget class="QWidget" name="download_page"/>
          <widget class="QWidget" name="settings_page">
