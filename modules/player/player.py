@@ -36,9 +36,10 @@ class Player(object):
             self.mediaplayer_out)[ui.output_device_play_box.currentText()])
 
     def set_media(self, media: str) -> None:
-        if get_ready_media(media):
-            self.mediaplayer_preview.set_media(self.instance_preview.media_new(get_ready_media(media)))
-            self.mediaplayer_out.set_media(self.instance_out.media_new(get_ready_media(media)))
+        ready = get_ready_media(media)
+        if ready:
+            self.mediaplayer_preview.set_media(self.instance_preview.media_new(ready))
+            self.mediaplayer_out.set_media(self.instance_out.media_new(ready))
         else:
             popup.popup('Error', 'Error playing this media. \nIf it uses link, check is this link valid.')
             self.mediaplayer_preview.set_media(None)
