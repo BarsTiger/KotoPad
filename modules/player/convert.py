@@ -13,8 +13,10 @@ def get_raw_link(url):
     if validators.url(url):
         if 'spotify' in url:
             url = Spotify().get_youtube_url(url)
+            print(url)
         if 'youtu' in url:
             url = pafy.new(url).getbestaudio().url
+            print(url)
 
     return url
 
@@ -23,12 +25,12 @@ def get_ready_media(original: str) -> str | None:
     if not os.path.isdir('temp'):
         os.mkdir('temp')
 
-    if Config.get().direct_stream:
+    if Config.get().direct_stream and os.path.isfile(original):
         return original
 
     try:
         namehash = 'temp\\' + hashlib.md5(original.encode('utf-8')).hexdigest()
-        if os.path.isfile(namehash):
+        if os.path.isfile(namehash) and not Config.get().direct_stream:
             return namehash
 
         if not os.path.isfile(original):
@@ -38,7 +40,7 @@ def get_ready_media(original: str) -> str | None:
                         f.write(requests.get(get_raw_link(original)).content)
                         original = 'tempsound'
                 else:
-                    original = get_raw_link(original)
+                    return get_raw_link(original)
 
         (pydub.AudioSegment.from_file(original) + pydub.AudioSegment.silent(1500))\
             .export(namehash, format='mp3')
