@@ -6,6 +6,7 @@ from gui.modules import player
 from gui.modules import settings
 from gui.modules import restreammic
 from gui.modules import explorer
+from gui.modules import collections
 from modules.player.player import Player
 from modules.restream.restream import Restreamer
 
@@ -17,3 +18,4 @@ def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player, rs:
     settings.register_handlers(ui)
     restreammic.register_handlers(ui, MainWindow, rs)
     explorer.register_handlers(ui, p)
+    collections.register_handlers(ui, p)

@@ -482,6 +482,9 @@ QListWidget:item:selected {
        </property>
        <item>
         <widget class="QStackedWidget" name="content">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
          <widget class="QWidget" name="pads_page">
           <layout class="QVBoxLayout" name="pads_page_lay">
            <property name="leftMargin">
@@ -707,7 +710,7 @@ QListWidget:item:selected {
           </layout>
          </widget>
          <widget class="QWidget" name="browser_page">
-          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <layout class="QVBoxLayout" name="browser_page_lay">
            <property name="leftMargin">
             <number>0</number>
            </property>
@@ -779,7 +782,7 @@ QListWidget:item:selected {
               <attribute name="title">
                <string>Options</string>
               </attribute>
-              <layout class="QVBoxLayout" name="verticalLayout_3">
+              <layout class="QVBoxLayout" name="browser_page_options_tab_lay">
                <item>
                 <widget class="QLabel" name="first_browser_parent_dir_path_label">
                  <property name="text">
@@ -904,7 +907,97 @@ QListWidget:item:selected {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="collections_page"/>
+         <widget class="QWidget" name="collections_page">
+          <layout class="QVBoxLayout" name="collections_page_lay">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QTabWidget" name="collections_page_tabs">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="collections_tab_in_tabs">
+              <attribute name="title">
+               <string>Collections</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="collections_tab_in_tabs_lay" stretch="1,3">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QListWidget" name="collections_listwidget">
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QListWidget" name="this_collection_listwidget"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="edit_collections_tabs">
+              <attribute name="title">
+               <string>Edit collections</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="edit_collections_tabs_lay">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="edit_collections_paths_label">
+                 <property name="text">
+                  <string>Double click row to edit path to collection</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QListWidget" name="edit_collections_paths">
+                 <property name="styleSheet">
+                  <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
+                 </property>
+                 <property name="editTriggers">
+                  <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+                 </property>
+                 <property name="dragEnabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="stream_page"/>
          <widget class="QWidget" name="collab_page"/>
          <widget class="QWidget" name="download_page"/>
@@ -1013,7 +1106,7 @@ QListWidget:item:selected {
                  <property name="title">
                   <string>Microphone restream options</string>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout">
+                 <layout class="QVBoxLayout" name="restream_options_group_lay">
                   <property name="topMargin">
                    <number>5</number>
                   </property>

@@ -8,7 +8,8 @@ class PathsConfig:
     def default():
         return {
             "first_browser_path": "",
-            "second_browser_path": ""
+            "second_browser_path": "",
+            "collections_list": list()
         }
 
     @staticmethod
@@ -31,7 +32,7 @@ class PathsConfig:
             return PathsConfig.get()
 
     @staticmethod
-    def update(key: str, value: str | None) -> dict:
+    def update(key: str, value: str | list | None) -> dict:
         with open("data/config.path", "r") as file:
             settings = json.load(file)
 

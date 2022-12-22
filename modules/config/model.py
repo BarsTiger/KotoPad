@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from dataclasses_json import dataclass_json
+from typing import List
 
 
 @dataclass_json
@@ -20,3 +21,4 @@ class ConfigModel:
 class PathsModel:
     first_browser_path: str
     second_browser_path: str
+    collections_list: List[str]
