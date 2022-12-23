@@ -3,8 +3,8 @@ from modules.config import Config
 
 centralwidget_b = """
 QWidget {
-    background-color: rgba(30, 30, 30, 0.1);
-    color: white;
+    background-color: rgba(30, 30, 30, 0);
+    color: rgba(255, 255, 255, 1);
     font: 10pt "Segoe UI";
 }
 
@@ -47,7 +47,7 @@ QPushButton {
     border-radius:6px;
     border-style: solid;
     border-color: rgba(48, 48, 48, 0.5);
-    background-color: rgba(44, 45, 46, 0.3);
+    background-color: rgba(44, 45, 46, 0.2);
 }
 QPushButton:hover {
     border-width: 2px;
@@ -306,6 +306,32 @@ QListWidget:item:hover {
 }
 QListWidget:item:selected {
     background-color: rgba(38, 39, 40, 0);
+}
+"""
+
+editable_lw_b = """
+QListWidget {
+    border-width: 1px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgba(48, 48, 48);
+    padding: 10px;
+    background-color: rgba(100, 100, 100, 0);
+    font: 10pt "Segoe UI";
+}
+QListWidget:item {
+    background-color: rgba(36, 36, 36, 0);
+    selection-color: rgba(0, 0, 0, 0);
+    selection-background-color: rgba(0, 0, 0, 0);
+}
+QListWidget:item:hover {
+    background-color: rgba(50, 50, 50, 0);
+}
+QListWidget:item:selected {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(119, 119, 119, 1);
+    selection-color: rgba(0, 0, 0, 0);
+    selection-background-color: rgba(255, 255, 255, 0);
 }
 """
 

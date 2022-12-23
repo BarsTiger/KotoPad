@@ -646,7 +646,7 @@ QListWidget:item:selected {
                         <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
                        </property>
                        <property name="editTriggers">
-                        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                        <set>QAbstractItemView::AllEditTriggers</set>
                        </property>
                        <property name="dragEnabled">
                         <bool>false</bool>
@@ -985,7 +985,7 @@ QListWidget:item:selected {
                   <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
                  </property>
                  <property name="editTriggers">
-                  <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+                  <set>QAbstractItemView::AllEditTriggers</set>
                  </property>
                  <property name="dragEnabled">
                   <bool>false</bool>
