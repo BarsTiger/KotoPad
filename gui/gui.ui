@@ -301,6 +301,20 @@ QSlider::handle:horizontal:hover {
 QSlider::handle:horizontal:pressed {
     background-color: #bfbfbf;
 }
+
+QProgressBar {
+    text-align: center;
+    color: white;
+    border-width: 1px; 
+    border-radius: 10px;
+    border-color: #3a3a3a;
+    border-style: inset;
+    background-color:#202020;
+}
+QProgressBar::chunk {
+    background-color: #848484;
+    border-radius: 5px;
+}
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -690,7 +704,7 @@ QListWidget:item:selected {
                         <string notr="true">font: 15pt &quot;Segoe UI&quot;;</string>
                        </property>
                        <property name="editTriggers">
-                        <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed|QAbstractItemView::SelectedClicked</set>
+                        <set>QAbstractItemView::AllEditTriggers</set>
                        </property>
                        <property name="dragEnabled">
                         <bool>true</bool>
@@ -1059,7 +1073,105 @@ QListWidget:item:selected {
           </layout>
          </widget>
          <widget class="QWidget" name="collab_page"/>
-         <widget class="QWidget" name="download_page"/>
+         <widget class="QWidget" name="download_page">
+          <layout class="QVBoxLayout" name="download_page_lay">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QLineEdit" name="download_url_box">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="placeholderText">
+              <string>URL (direct web file, YouTube or spotify link) or path to file</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="download_path_widget" native="true">
+             <layout class="QHBoxLayout" name="download_path_widget_lay">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="download_to_path_box">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="placeholderText">
+                 <string>File download folder</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="choose_download_path_button">
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>35</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>Choose path</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="download_track_button">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Download</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTextBrowser" name="download_track_logs"/>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="download_track_progress">
+             <property name="value">
+              <number>0</number>
+             </property>
+             <property name="textVisible">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="settings_page">
           <layout class="QVBoxLayout" name="settings_page_lay">
            <property name="leftMargin">
