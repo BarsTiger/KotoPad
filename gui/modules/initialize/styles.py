@@ -284,6 +284,20 @@ QSlider::handle:horizontal:hover {
 QSlider::handle:horizontal:pressed {
     background-color: rgba(191, 191, 191, 0);
 }
+
+QProgressBar {
+    text-align: center;
+    color: white;
+    border-width: 1px; 
+    border-radius: 10px;
+    border-color: rgba(58, 58, 58, 0.5);
+    border-style: inset;
+    background-color: rgba(32, 32, 32, 0.5);
+}
+QProgressBar::chunk {
+    background-color: rgba(132, 132, 132, 0.5);
+    border-radius: 5px;
+}
 """
 
 menupage_b = """
@@ -617,6 +631,20 @@ QSlider::handle:horizontal:hover {
 }
 QSlider::handle:horizontal:pressed {
     background-color: #bfbfbf;
+}
+
+QProgressBar {
+    text-align: center;
+    color: white;
+    border-width: 1px; 
+    border-radius: 10px;
+    border-color: #3a3a3a;
+    border-style: inset;
+    background-color: #202020;
+}
+QProgressBar::chunk {
+    background-color: #848484;
+    border-radius: 5px;
 }
 """
 
