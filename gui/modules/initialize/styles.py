@@ -331,7 +331,7 @@ QListWidget {
     border-color: rgba(48, 48, 48);
     padding: 10px;
     background-color: rgba(100, 100, 100, 0);
-    font: 10pt "Segoe UI";
+    font: 15pt "Segoe UI";
 }
 QListWidget:item {
     background-color: rgba(36, 36, 36, 0);

@@ -18,6 +18,7 @@ def on_load(ui: Ui_MainWindow, MainWindow: QMainWindow):
     ui.menu.setStyleSheet(styles.menupage())
     if 'acrylic' in Config.get().theme:
         GlobalBlur(MainWindow.winId(), acrylic=True)
+    if Config.get().theme != "Dark gray":
         ui.edit_first_pads_collection_list.setStyleSheet(styles.editable_lw_b)
         ui.edit_second_pads_collection_list.setStyleSheet(styles.editable_lw_b)
         ui.edit_collections_paths.setStyleSheet(styles.editable_lw_b)
