@@ -8,6 +8,8 @@ Download [latest windows release build from this direct link](https://github.com
 
 Download VB-CABLE from [here](https://vb-audio.com/Cable/) or use [this direct link to archive](https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack43.zip). Unpack VBCABLE_Driver_Pack43.zip and launch VBCABLE_Setup_x64.exe as an administrator. Press `Install driver` and restart your PC if KotoPad won't work.
 
+Download [VLC Media Player (windows)](https://www.videolan.org/vlc/) and install it.
+
 Run KotoPad.exe from folder you have unpacked or create shortcut for it. In settings of your Discord/Teamspeak/Zoom/Teams or any app choose CABLE Output as microphone. Also you can set it as default in settings. 
 
 Set up devices on settings tab, turn on micro restreaming if you need other people to hear you. 
