@@ -1,7 +1,6 @@
 import pydub
 import validators
 from modules.config import Config
-from rich import print
 import pafy
 import hashlib
 import os

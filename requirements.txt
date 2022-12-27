@@ -1,5 +1,4 @@
 wheel
-rich
 PyQt5
 pyinstaller
 dataclasses-json
