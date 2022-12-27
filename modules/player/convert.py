@@ -6,17 +6,19 @@ import pafy
 import hashlib
 import os
 from modules.spotify.spotify_dl import Spotify
+from modules.anonfiles.anonfiles import Anonfiles
 import requests
+import urllib.parse
 
 
 def get_raw_link(url):
     if validators.url(url):
-        if 'spotify' in url:
+        if 'spotify' in url.lower():
             url = Spotify().get_youtube_url(url)
-            print(url)
-        if 'youtu' in url:
+        if 'youtu' in url.lower():
             url = pafy.new(url).getbestaudio().url
-            print(url)
+        if 'anonfiles' in url.lower():
+            url = urllib.parse.quote(Anonfiles.get_direct(url), safe=':/')
 
     return url
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>815</width>
-    <height>484</height>
+    <height>497</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1072,7 +1072,469 @@ QListWidget:item:selected {
            </item>
           </layout>
          </widget>
-         <widget class="QWidget" name="collab_page"/>
+         <widget class="QWidget" name="collab_page">
+          <layout class="QVBoxLayout" name="collab_page_lay">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QTabWidget" name="collab_tab_widget">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="collab_connect_tab">
+              <attribute name="title">
+               <string>Connect</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="collab_connect_tab_2">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QWidget" name="connect_session_widget" native="true">
+                 <layout class="QHBoxLayout" name="connect_session_widget_lay">
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLineEdit" name="collab_session_key_box">
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="placeholderText">
+                     <string>Collab session key</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="connect_to_session_button">
+                    <property name="minimumSize">
+                     <size>
+                      <width>70</width>
+                      <height>35</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>Connect</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTextBrowser" name="collab_connect_logs"/>
+               </item>
+               <item>
+                <widget class="QPushButton" name="collab_disconnect_button">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string>Disconnect</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="collab_host_tab">
+              <attribute name="title">
+               <string>Host</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="collab_host_tab_lay">
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QTabWidget" name="collab_host_tabs">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="collab_host_create_tab">
+                  <attribute name="title">
+                   <string>Create</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="collab_host_create_tab_lay">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignTop">
+                    <widget class="QWidget" name="create_session_widget" native="true">
+                     <layout class="QHBoxLayout" name="create_session_widget_lay">
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLineEdit" name="create_session_name_box">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="maxLength">
+                         <number>25</number>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Collab session room name</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="create_session_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>70</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Create</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignTop">
+                    <widget class="QLabel" name="connection_key_label">
+                     <property name="text">
+                      <string>Connection key. With this key, everyone can connect to the room</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="new_connection_key_copy_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Create session first</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="admin_key_label">
+                     <property name="text">
+                      <string>Control key, contains current pusher credentials. Do not share it</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="new_connection_admin_key_copy_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Create session first</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="collab_host_create_tab_spacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="collab_host_control_tab">
+                  <attribute name="title">
+                   <string>Control</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="collab_host_control_tab_lay">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item alignment="Qt::AlignTop">
+                    <widget class="QWidget" name="connect_admin_session_widget" native="true">
+                     <layout class="QHBoxLayout" name="connect_session_widget_lay_2">
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLineEdit" name="collab_session_admin_key_box">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Admin session key</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="connect_to_admin_session_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>70</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Connect</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignTop">
+                    <widget class="QLineEdit" name="url_to_send_admin_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Direct, Anonfiles, YouTube or Spotify URL</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="send_to_users_admin_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Send URL</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="stop_all_button_admin">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Stop playing</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QTextBrowser" name="control_admin_logs"/>
+                   </item>
+                  </layout>
+                 </widget>
+                 <widget class="QWidget" name="collab_host_upload_tab">
+                  <attribute name="title">
+                   <string>Upload sound</string>
+                  </attribute>
+                  <layout class="QVBoxLayout" name="collab_host_upload_tab_lay">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QWidget" name="upload_sound_widget" native="true">
+                     <layout class="QHBoxLayout" name="create_session_widget_lay_2">
+                      <property name="leftMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>0</number>
+                      </property>
+                      <item>
+                       <widget class="QLineEdit" name="filename_to_upload_box">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Path to file</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QPushButton" name="choose_upload_sound_button">
+                        <property name="minimumSize">
+                         <size>
+                          <width>70</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string>Pick file</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="upload_sound_button">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Upload</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="anonfiles_uploaded_url_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="readOnly">
+                      <bool>true</bool>
+                     </property>
+                     <property name="placeholderText">
+                      <string>Upload file first</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer name="collab_host_upload_tab_spacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>261</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
          <widget class="QWidget" name="download_page">
           <layout class="QVBoxLayout" name="download_page_lay">
            <property name="leftMargin">
@@ -1358,7 +1820,7 @@ QListWidget:item:selected {
                 </widget>
                </item>
                <item>
-                <spacer name="verticalSpacer">
+                <spacer name="audio_devices_settings_tab_spacer">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -1430,6 +1892,9 @@ QListWidget:item:selected {
                </item>
                <item alignment="Qt::AlignTop">
                 <widget class="QTabWidget" name="api_keys_settings_tabs_widget">
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
                  <widget class="QWidget" name="spotify_api_settings_tab">
                   <attribute name="title">
                    <string>Spotify</string>
@@ -1499,12 +1964,143 @@ QListWidget:item:selected {
                      </property>
                     </widget>
                    </item>
+                   <item>
+                    <spacer name="spotify_api_settings_tab_spacer">
+                     <property name="orientation">
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>20</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
                   </layout>
                  </widget>
                  <widget class="QWidget" name="pusher_settings_tab">
                   <attribute name="title">
                    <string>Pusher</string>
                   </attribute>
+                  <layout class="QVBoxLayout" name="pusher_settings_tab_lay">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="pusher_app_id_label">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>app_id</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pusher_app_id_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>1699645</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="pusher_key_label">
+                     <property name="text">
+                      <string>key</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pusher_key_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>0c39944565451ae335d1</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="pusher_secret_label">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>50</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>secret</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pusher_secret_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>5011da8cb2725b4b2298</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="pusher_cluster_label">
+                     <property name="text">
+                      <string>cluster</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="pusher_cluster_box">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="placeholderText">
+                      <string>us</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </widget>
                </item>
@@ -1516,7 +2112,7 @@ QListWidget:item:selected {
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
-                   <height>40</height>
+                   <height>0</height>
                   </size>
                  </property>
                 </spacer>

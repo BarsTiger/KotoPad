@@ -1,5 +1,6 @@
 from gui.gui import Ui_MainWindow
 from modules.config import Config
+from modules.config.pusher import PusherConfig
 from modules.spotify.config import SpotifyConfig
 import shutil
 
@@ -28,6 +29,19 @@ def register_handlers(ui: Ui_MainWindow):
     )
     ui.spotify_client_secret_box.textChanged.connect(
         lambda: SpotifyConfig.update("client_secret", ui.spotify_client_secret_box.text())
+    )
+
+    ui.pusher_app_id_box.textChanged.connect(
+        lambda: PusherConfig.update("app_id", ui.pusher_app_id_box.text())
+    )
+    ui.pusher_key_box.textChanged.connect(
+        lambda: PusherConfig.update("key", ui.pusher_key_box.text())
+    )
+    ui.pusher_secret_box.textChanged.connect(
+        lambda: PusherConfig.update("secret", ui.pusher_secret_box.text())
+    )
+    ui.pusher_cluster_box.textChanged.connect(
+        lambda: PusherConfig.update("cluster", ui.pusher_cluster_box.text())
     )
 
     ui.use_original_streaming_method_check.stateChanged.connect(

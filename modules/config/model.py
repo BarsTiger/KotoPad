@@ -22,3 +22,12 @@ class PathsModel:
     first_browser_path: str
     second_browser_path: str
     collections_list: List[str]
+
+
+@dataclass_json
+@dataclass(frozen=True)
+class PusherModel:
+    app_id: str
+    key: str
+    secret: str
+    cluster: str

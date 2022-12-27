@@ -1,5 +1,6 @@
 from gui.gui import Ui_MainWindow
 from modules.config import Config
+from modules.config.pusher import PusherConfig
 from modules.spotify.config import SpotifyConfig
 from modules.restream import get_streaming_devices
 from modules.player.player import get_devices, get_instance, get_player
@@ -40,5 +41,10 @@ def fill_settings(ui: Ui_MainWindow):
 
     ui.spotify_client_id_box.setText(SpotifyConfig.get().client_id)
     ui.spotify_client_secret_box.setText(SpotifyConfig.get().client_secret)
+
+    ui.pusher_app_id_box.setText(PusherConfig.get().app_id)
+    ui.pusher_key_box.setText(PusherConfig.get().key)
+    ui.pusher_secret_box.setText(PusherConfig.get().secret)
+    ui.pusher_cluster_box.setText(PusherConfig.get().cluster)
 
     ui.use_original_streaming_method_check.setChecked(Config.get().direct_stream)

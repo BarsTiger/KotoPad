@@ -9,6 +9,7 @@ from gui.modules import explorer
 from gui.modules import collections
 from gui.modules import stream
 from gui.modules import download
+from gui.modules import collab
 from modules.player.player import Player
 from modules.restream.restream import Restreamer
 
@@ -23,3 +24,4 @@ def register_handlers(ui: Ui_MainWindow, MainWindow: QMainWindow, p: Player, rs:
     collections.register_handlers(ui, p)
     stream.register_handlers(ui, p)
     download.register_handlers(ui)
+    collab.register_handlers(ui, p)
